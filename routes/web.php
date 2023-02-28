@@ -18,21 +18,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/trabajador', function () {
-    return view('Trabajador.create');
-});
+/* Vistas Empleado*/
 
 Route::get('/empleado', function () {
     return view('empleado.index');
 });
+
+Route::get('/empleado/create', function () {
+    return view('empleado.create');
+});
+
+
+
+
+Route::get('/empleado/create',[EmpleadoController::class,'create']);
+Route::get('/empleado',[EmpleadoController::class,'index']);
+
+
+
+/* Vistas Trabajador*/
+Route::get('/trabajador', function () {
+    return view('Trabajador.create');
+});
+
 
 
 Route::get('/trabajador/edit', function () {
     return view('Trabajador.edit');
 });
 
-Route::get('/empleado/create',[EmpleadoController::class,'create']);
-Route::get('/empleado',[EmpleadoController::class,'index']);
 
 
 
